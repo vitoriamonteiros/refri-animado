@@ -1,0 +1,103 @@
+.item{
+  display: none; /*faz as class sumirem */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.item.active{
+  display: block;
+}
+
+.item .title{
+  font-size: 14rem;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.item .fruit{
+  width: 100%;
+  position: absolute;
+  /* top:0; */
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item .refri{
+  z-index: 2;
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: #eee9;
+  border: 1px solid #eee9;
+  color: #eee;
+  font-size: x-large;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 4;
+  border-radius: 50%;
+}
+
+#prev{
+  left: 3%;
+}
+
+#next{
+  right: 3%;
+}
+
+/* animação das frutas */
+@keyframes toActive {
+  from{
+    top:100%;
+    opacity: 0;
+  }
+}
+
+.item.active img.fruit{
+  animation: toActive 0.9s ease-in-out 1;
+}
+
+.item.active .title{
+  animation: toActive 0.5s ease-in-out 1;
+}
+
+@media (max-width: 1200px) {
+  .item .title{
+    font-size: 9rem;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .item .title{
+    font-size: 4.5rem;
+  }
+  
+}
